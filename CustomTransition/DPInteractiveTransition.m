@@ -76,10 +76,12 @@
     switch (sender.state) {
         case UIGestureRecognizerStateBegan:
             _beganInteration = YES;
-            [self startTranslition];
+            [self startTranslition:percent];
             break;
         case UIGestureRecognizerStateChanged:
-            [self updateInteractiveTransition:percent];
+            if (percent > 0) {
+                [self updateInteractiveTransition:percent];
+            }
             break;
         case UIGestureRecognizerStateEnded:
             _beganInteration = NO;
@@ -98,7 +100,10 @@
     }
 }
 
-- (void)startTranslition{
+- (void)startTranslition:(CGFloat)percent{
+    if (percent <= 0) {
+        return;
+    }
     switch (_type) {
         case DPInteractiveTransitionTypePresent:
             !_startPresentCallback ?: _startPresentCallback();
