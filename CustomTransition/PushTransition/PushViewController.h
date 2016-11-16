@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PushViewController.h
 //  CustomTransition
 //
 //  Created by lidp on 2016/11/16.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UITableViewController
+@interface PushViewController : UIViewController
 
+@property (strong, nonatomic) UIImageView *imageView;
 
 @end
-

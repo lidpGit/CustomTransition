@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PresentViewController.h
 //  CustomTransition
 //
 //  Created by lidp on 2016/11/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UITableViewController
-
+@interface PresentViewController : UIViewController
 
 @end
-
