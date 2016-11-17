@@ -72,7 +72,6 @@
     
     //大于等于1时，置为0.99，避免完成过渡会回弹一次
     percent = percent >= 1 ? 0.99 : percent;
-    
     switch (sender.state) {
         case UIGestureRecognizerStateBegan:
             _beganInteration = YES;
@@ -101,7 +100,7 @@
 }
 
 - (void)startTranslition:(CGFloat)percent{
-    if (percent <= 0) {
+    if (percent < 0) {
         return;
     }
     switch (_type) {
